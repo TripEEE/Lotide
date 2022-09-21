@@ -22,7 +22,8 @@ const assertEqual = function (actual, expected) {
 const countLetters = function(str) {
   const numOfLetters = {}
   const lowerCase = str.toLowerCase()
-  for(let letter of lowerCase) {
+  const noSpaces = lowerCase.split(' ').join('')
+  for(let letter of noSpaces) {
     if(!numOfLetters[letter]) {
       numOfLetters[letter] = 0
     }
