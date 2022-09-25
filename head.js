@@ -12,9 +12,7 @@ const assertEqual = function (actual, expected) {
 //The head function should not return the first element as an array,
 //it should simply return the element itself.
 const head = function (array) {
-  const _ = require("lodash");
-  let output = _.head(array);
-  return output;
+  return array.shift();
 };
 
 assertEqual(head(["Mr", "Rogers", "Neighbourhood"]), "Mr");

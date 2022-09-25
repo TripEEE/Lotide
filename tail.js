@@ -9,9 +9,7 @@ const assertEqual = function (actual, expected) {
 };
 
 const tail = function (array) {
-  const _ = require("lodash");
-  let output = _.tail(array);
-  return output;
+  return array.pop();
 };
 
-console.log(tail(["Yo yo", "lighthouse", "labs"]));
+assertEqual(tail(["Mr", "Rogers", "Neighbourhood"]), "Neighbourhood");

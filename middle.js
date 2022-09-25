@@ -1,12 +1,15 @@
 const eqArrays = function(array1, array2) {
-  const _ = require("lodash")
-  const checkArrays = _.isEqual(array1, array2)
-  if(checkArrays) {
-    return 'The two arrays are equal!'
-  } else {
-    return 'The two arrays are NOT equal!'
+  if(array1.length !== array2.length) {
+    return false
   }
+  for(let i = 0; i < array1.length; i++) {
+    if(array1[i] !== array2[i]) {
+      return false
+    }
+  }
+  return true
 }
+
 
 //Implement middle function which will take in an array and return the middle most elements of the given array.
 //If there is only one or two elements in the array, there is no middle. Return an empty array.

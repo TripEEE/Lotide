@@ -1,12 +1,31 @@
 const eqArrays = function(array1, array2) {
-  const _ = require("lodash")
-  const checkArrays = _.isEqual(array1, array2)
+  if(array1.length !== array2.length) {
+    return false
+  }
+  for(let i = 0; i < array1.length; i++) {
+    if(array1[i] !== array2[i]) {
+      return false
+    }
+  }
+  return true
+}
+
+const assertArraysEqual = function(array1, array2) {
+  let checkArrays = true
+  if(array1.length !== array2.length) {
+    checkArrays = false
+  }
+  for(let i = 0; i < array1.length; i++) {
+    if(array1[i] !== array2[i]) {
+      checkArrays = false
+    }
+  }
   if(checkArrays) {
-    return 'The two arrays are equal!'
+    console.log(`❤️❤️❤️  Assertion Passed: ${array1} === ${array2}`)
   } else {
-    return 'The two arrays are NOT equal!'
+    console.log(`🥹🥹🥹  Assertion Failed: ${array1} === ${array2}`)
   }
 }
 
-console.log(eqArrays([1, 2, 3], [1, 2, 3]))
-console.log(eqArrays(["This", "will"],["return", "false"]))
+assertArraysEqual([1, 2, 3], [1, 2, 3])
+assertArraysEqual(["This", "will"],["return", "false"])
