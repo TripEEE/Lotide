@@ -9,11 +9,17 @@ const assertEqual = function (actual, expected) {
 // assertEqual(2, 2);
 // assertEqual("LighthouseLabs", "Bootcamp");
 
-//create a function, eqArrays, which takes in two arrays and returns true or false, based on a perfect match.
+
 const eqArrays = function(array1, array2) {
-  const _ = require("lodash")
-  const checkArrays = _.isEqual(array1, array2)
-  return checkArrays
+  if(array1.length !== array2.length) {
+    return false
+  }
+  for(let i = 0; i < array1.length; i++) {
+    if(array1[i] !== array2[i]) {
+      return false
+    }
+  }
+  return true
 }
 
-console.log(assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true))
+assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
